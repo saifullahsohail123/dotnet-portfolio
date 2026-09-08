@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Roshan AI — Gestational Diabetes Detection Platform</title>
+  <meta name="description" content="AI-powered clinical platform for Gestational Diabetes Mellitus (GDM) detection deployed at Al-Shifa International Hospital"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<header class="header">
+  <div class="logo">
+    <div class="logo-icon">??</div>
+    <div><div class="logo-text">Roshan AI</div><div class="logo-sub">Gestational Diabetes Intelligence System</div></div>
+  </div>
+  <div class="hospital-badge">Al-Shifa International Hospital &bull; Clinical AI Platform</div>
+  <div class="header-right"><div class="acc-badge">Model Accuracy: <strong id="hdr-acc">94.7%</strong></div></div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag">// AI-POWERED EARLY DETECTION SYSTEM</div>
+      <h1>Gestational Diabetes <span>Risk Intelligence</span></h1>
+      <p>Advanced machine learning platform for real-time GDM risk assessment, deployed across Al-Shifa International Hospital's maternity wards. Integrating patient biomarkers with trained AI models for early intervention recommendations.</p>
+      <div class="hero-badges">
+        <span class="hb">?? ML Model: 94.7% Accuracy</span>
+        <span class="hb">?? Patients Served: Millions</span>
+        <span class="hb">? Real-Time Prediction</span>
+      </div>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kpi-val" id="k-total">—</div><div class="kpi-lbl">Patients Today</div></div>
+      <div class="kpi-card danger"><div class="kpi-val" id="k-high">—</div><div class="kpi-lbl">High Risk</div></div>
+      <div class="kpi-card warn"><div class="kpi-val" id="k-med">—</div><div class="kpi-lbl">Medium Risk</div></div>
+      <div class="kpi-card safe"><div class="kpi-val" id="k-low">—</div><div class="kpi-lbl">Low Risk</div></div>
+    </div>
+  </div>
+</section>
+
+<main class="main">
+  <div class="main-grid">
+    <!-- Patient Table -->
+    <div class="card wide-card">
+      <div class="card-hdr">Patient Risk Assessment Results</div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Patient ID</th><th>Name</th><th>Age</th><th>BMI</th><th>Blood Pressure</th><th>Glucose</th><th>HbA1c</th><th>Gest. Week</th><th>Risk Score</th><th>Risk Level</th></tr></thead>
+          <tbody id="patient-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Risk Distribution -->
+    <div class="card">
+      <div class="card-hdr">Risk Distribution</div>
+      <div class="card-body"><div class="chart-wrap"><canvas id="riskChart"></canvas></div></div>
+    </div>
+
+    <!-- Trend Chart -->
+    <div class="card">
+      <div class="card-hdr">Patient Risk Trend (8 Weeks)</div>
+      <div class="card-body"><div class="chart-wrap"><canvas id="trendChart"></canvas></div></div>
+    </div>
+  </div>
+
+  <!-- Prediction Simulator -->
+  <div class="predictor-section">
+    <div class="predictor-card">
+      <div class="pred-header">?? AI Risk Assessment Simulator</div>
+      <div class="pred-body">
+        <div class="sliders-grid">
+          <div class="slider-item">
+            <label>Age <span id="val-age">28</span> years</label>
+            <input type="range" id="sl-age" min="18" max="45" value="28" class="slider"/>
+          </div>
+          <div class="slider-item">
+            <label>BMI <span id="val-bmi">27.0</span></label>
+            <input type="range" id="sl-bmi" min="18" max="45" value="27" step="0.5" class="slider"/>
+          </div>
+          <div class="slider-item">
+            <label>Blood Glucose <span id="val-glucose">120</span> mg/dL</label>
+            <input type="range" id="sl-glucose" min="70" max="250" value="120" class="slider"/>
+          </div>
+          <div class="slider-item">
+            <label>HbA1c <span id="val-hba1c">6.0</span>%</label>
+            <input type="range" id="sl-hba1c" min="4" max="12" value="6" step="0.1" class="slider"/>
+          </div>
+          <div class="slider-item">
+            <label>Systolic BP <span id="val-bp">120</span> mmHg</label>
+            <input type="range" id="sl-bp" min="90" max="180" value="120" class="slider"/>
+          </div>
+          <div class="slider-item">
+            <label>Gestational Week <span id="val-week">20</span></label>
+            <input type="range" id="sl-week" min="6" max="40" value="20" class="slider"/>
+          </div>
+        </div>
+        <button class="assess-btn" id="assess-btn">? Assess GDM Risk</button>
+        <div class="result-card" id="result-card" style="display:none"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <span class="tech-badge">? ASP.NET Core 8</span>
+  <span class="tech-badge">??? PostgreSQL</span>
+  <span class="tech-badge">?? AI/ML Models</span>
+  <span class="tech-badge">?? ApexCharts</span>
+  <span class="tech-badge">?? RBAC + JWT</span>
+  <div style="margin-top:0.5rem">Roshan AI — Clinical GDM Detection Platform &copy; 2026 | AI-Sarosh International</div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

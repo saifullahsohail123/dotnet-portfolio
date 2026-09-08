@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mobify — Polaris Real-Time Business Intelligence Dashboard</title>
+  <meta name="description" content="Mobify full-stack business platform featuring Polaris real-time data visualization dashboard with AG Grid and REST APIs"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<header class="header">
+  <div class="logo"><span class="logo-icon">?</span><div><div class="logo-text">Mobify</div><div class="logo-sub">Business Intelligence Platform</div></div></div>
+  <div class="polaris-badge">?? POLARIS DASHBOARD</div>
+  <div class="header-right">
+    <div class="req-counter"><span class="req-icon">??</span><span id="req-live">10,247</span> req/min</div>
+    <div class="user-dot">JD</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">// REAL-TIME BUSINESS ANALYTICS</div>
+      <h1>POLARIS <span>Intelligence</span> Hub</h1>
+      <p>High-performance business intelligence platform handling 10,000+ requests/minute with Redis caching, PostgreSQL data pipelines, and real-time visualization across all business metrics.</p>
+    </div>
+    <div class="hero-kpis">
+      <div class="hkpi"><div class="hkpi-val" id="hk-daily">—</div><div class="hkpi-lbl">Today Revenue</div></div>
+      <div class="hkpi"><div class="hkpi-val" id="hk-weekly">—</div><div class="hkpi-lbl">Weekly Revenue</div></div>
+      <div class="hkpi accent2"><div class="hkpi-val" id="hk-users">—</div><div class="hkpi-lbl">Total Users</div></div>
+      <div class="hkpi accent3"><div class="hkpi-val" id="hk-cvr">—</div><div class="hkpi-lbl">Conversion %</div></div>
+    </div>
+  </div>
+</section>
+
+<main class="main">
+  <!-- Charts Row -->
+  <div class="three-col">
+    <div class="card span2">
+      <div class="card-hdr">Revenue &amp; Users — 14 Day Trend</div>
+      <div class="card-body"><div class="chart-wrap"><canvas id="revenueChart"></canvas></div></div>
+    </div>
+    <div class="card">
+      <div class="card-hdr">Sales by Category</div>
+      <div class="card-body"><div class="chart-wrap"><canvas id="catChart"></canvas></div></div>
+    </div>
+  </div>
+
+  <!-- Sales Table (Polaris Grid) -->
+  <div class="card" style="margin-top:1.5rem">
+    <div class="card-hdr" style="display:flex;justify-content:space-between;align-items:center">
+      <span>?? Polaris Data Grid — Live Sales Records</span>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <input type="text" id="search-box" class="search-input" placeholder="Search..."/>
+        <select id="region-filter" class="filter-select"><option value="">All Regions</option><option>Rawalpindi</option><option>Lahore</option><option>Karachi</option><option>Islamabad</option><option>Peshawar</option></select>
+      </div>
+    </div>
+    <div class="card-body no-pad">
+      <table class="data-table" id="sales-table">
+        <thead><tr>
+          <th class="sortable" data-col="date">DATE ?</th>
+          <th class="sortable" data-col="region">REGION ?</th>
+          <th class="sortable" data-col="product">PRODUCT ?</th>
+          <th class="sortable" data-col="category">CATEGORY ?</th>
+          <th class="sortable" data-col="units" style="text-align:right">UNITS ?</th>
+          <th class="sortable" data-col="revenue" style="text-align:right">REVENUE ?</th>
+        </tr></thead>
+        <tbody id="sales-body"></tbody>
+      </table>
+    </div>
+    <div class="grid-footer">Showing <span id="showing-count">10</span> of 10 records &bull; Powered by Mobify REST API &bull; PostgreSQL + Redis</div>
+  </div>
+</main>
+
+<footer class="footer">
+  <span class="tech-badge">? ASP.NET Core 8</span>
+  <span class="tech-badge">?? AG Grid</span>
+  <span class="tech-badge">?? Redis Caching</span>
+  <span class="tech-badge">?? PostgreSQL</span>
+  <span class="tech-badge">?? React + TypeScript</span>
+  <div style="margin-top:0.5rem">Mobify Platform — Full Stack Business Intelligence &copy; 2026</div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

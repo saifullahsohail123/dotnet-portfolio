@@ -1,0 +1,6 @@
+@cyber_nexus_demo_HostAddress = http://localhost:5195
+
+GET {{cyber_nexus_demo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

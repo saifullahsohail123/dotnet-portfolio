@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Aerial Scoring System — NASTECP</title>
+  <meta name="description" content="Mission-critical live aerial scoring application for pilot strike accuracy evaluation — National Aerospace and Science Technology Park"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<header class="header">
+  <div class="logo"><span class="logo-icon">?</span><div><div class="logo-text">AERIAL SCORING SYSTEM</div><div class="logo-sub">National Aerospace &amp; Science Technology Park — Rawalpindi</div></div></div>
+  <div class="mission-badge" id="mission-badge">? OPERATION FALCON STRIKE — ACTIVE</div>
+  <div class="header-right"><div class="clock-box"><div class="clock-label">MISSION TIME</div><div class="clock" id="mission-clock">00:42:15</div></div></div>
+</header>
+
+<section class="hero">
+  <div class="scanline"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-label">// LIVE AERIAL STRIKE SCORING — MISSION CRITICAL SYSTEM</div>
+      <h1>STRIKE <span>ACCURACY</span><br/>INTELLIGENCE</h1>
+      <p>Real-time pilot performance evaluation for missile strike accuracy across designated target zones. Powered by socket-based data streams and REST API infrastructure.</p>
+    </div>
+    <div class="mission-panel" id="mission-panel">
+      <div class="mp-header">CURRENT MISSION</div>
+      <div class="mp-stat"><span>Mission</span><strong id="mp-name">—</strong></div>
+      <div class="mp-stat"><span>Targets Total</span><strong id="mp-total">—</strong></div>
+      <div class="mp-stat"><span>Engaged</span><strong id="mp-engaged" style="color:var(--amber)">—</strong></div>
+      <div class="mp-stat"><span>Remaining</span><strong id="mp-remaining" style="color:var(--danger)">—</strong></div>
+      <div class="progress-wrap">
+        <div class="progress-label">Mission Completion</div>
+        <div class="progress-track"><div class="progress-fill" id="mp-prog" style="width:0%"></div></div>
+        <div class="progress-val" id="mp-pct">0%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="main">
+  <div class="main-grid">
+    <!-- Leaderboard -->
+    <div class="panel">
+      <div class="panel-hdr">?? PILOT LEADERBOARD</div>
+      <table class="score-table">
+        <thead><tr><th>RANK</th><th>CALLSIGN</th><th>AIRCRAFT</th><th>STRIKES</th><th>AVG ACCURACY</th><th>SCORE</th></tr></thead>
+        <tbody id="pilot-body"></tbody>
+      </table>
+    </div>
+
+    <!-- Accuracy Chart -->
+    <div class="panel chart-panel">
+      <div class="panel-hdr">ACCURACY BY PILOT</div>
+      <div class="chart-wrap"><canvas id="accChart"></canvas></div>
+    </div>
+  </div>
+
+  <!-- Live Strike Feed -->
+  <div class="panel" style="margin-top:1.25rem">
+    <div class="panel-hdr" style="display:flex;align-items:center;gap:0.75rem">
+      <span>?? LIVE STRIKE FEED</span>
+      <div class="blink-dot"></div>
+      <span style="color:var(--muted);font-size:0.7rem">REAL-TIME</span>
+    </div>
+    <div class="feed-wrap">
+      <div class="feed-list" id="feed-list"></div>
+    </div>
+  </div>
+
+  <!-- Radar-style Target Grid -->
+  <div class="panel" style="margin-top:1.25rem">
+    <div class="panel-hdr">TACTICAL TARGET ZONE MAP</div>
+    <div class="radar-grid" id="radar-grid"></div>
+  </div>
+</main>
+
+<footer class="footer">
+  <span class="tech-badge">? ASP.NET Core 8</span>
+  <span class="tech-badge">?? WebSockets</span>
+  <span class="tech-badge">??? SQL Views + REST APIs</span>
+  <span class="tech-badge">?? React + TypeScript</span>
+  <span class="tech-badge">??? Mission-Critical HA</span>
+  <div style="margin-top:0.5rem">Live Aerial Scoring System &copy; 2026 | National Aerospace &amp; Science Technology Park</div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

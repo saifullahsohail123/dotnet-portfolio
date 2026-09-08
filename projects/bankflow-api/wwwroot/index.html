@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BankFlow — Digital Banking Dashboard</title>
+  <meta name="description" content="BankFlow fintech REST API dashboard — ASP.NET Core, EF Core, PostgreSQL, Azure"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-icon">??</div>
+      <div>
+        <div class="logo-text">BankFlow</div>
+        <div class="logo-sub">Digital Banking Platform</div>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <button class="nav-btn active" id="nav-dashboard">Dashboard</button>
+      <button class="nav-btn" id="nav-accounts">Accounts</button>
+      <button class="nav-btn" id="nav-transactions">Transactions</button>
+      <button class="nav-btn" id="nav-analytics">Analytics</button>
+    </nav>
+    <div class="header-right">
+      <span class="badge">? LIVE</span>
+      <div class="user-avatar">JM</div>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>Enterprise <span>Banking Intelligence</span><br/>Command Center</h1>
+      <p>Real-time account analytics, transaction monitoring, and financial insights powered by ASP.NET Core microservices and Azure cloud infrastructure.</p>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-val" id="stat-accounts">—</div>
+        <div class="hero-stat-label">Active Accounts</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val" id="stat-net">—</div>
+        <div class="hero-stat-label">Total Net Worth</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val" id="stat-tx">12</div>
+        <div class="hero-stat-label">Recent Transactions</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="main">
+
+  <!-- KPI Cards -->
+  <div class="kpi-grid" id="kpi-grid">
+    <div class="kpi-card"><div class="kpi-label">Total Net Worth</div><div class="kpi-value" id="kpi-worth">—</div><div class="kpi-sub">Across all accounts</div><div class="kpi-icon">??</div></div>
+    <div class="kpi-card"><div class="kpi-label">Total Deposits</div><div class="kpi-value" id="kpi-deposits">—</div><div class="kpi-sub">This month</div><div class="kpi-icon">??</div></div>
+    <div class="kpi-card"><div class="kpi-label">Total Withdrawals</div><div class="kpi-value" id="kpi-withdrawals">—</div><div class="kpi-sub">This month</div><div class="kpi-icon">??</div></div>
+    <div class="kpi-card"><div class="kpi-label">Active Accounts</div><div class="kpi-value" id="kpi-accounts">—</div><div class="kpi-sub">All in good standing</div><div class="kpi-icon">?</div></div>
+  </div>
+
+  <!-- Accounts + Chart -->
+  <div class="content-grid" style="margin-bottom:1.5rem;">
+    <div class="card">
+      <div class="card-header">
+        <div><div class="card-title">Account Portfolio</div><div class="card-subtitle">All registered accounts</div></div>
+        <span class="badge">4 Active</span>
+      </div>
+      <div class="card-body">
+        <div class="account-cards" id="account-cards">
+          <div class="skeleton" style="height:110px;border-radius:12px;"></div>
+          <div class="skeleton" style="height:110px;border-radius:12px;"></div>
+          <div class="skeleton" style="height:110px;border-radius:12px;"></div>
+          <div class="skeleton" style="height:110px;border-radius:12px;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <div><div class="card-title">Balance Trend</div><div class="card-subtitle">Last 30 days</div></div>
+      </div>
+      <div class="card-body">
+        <div class="chart-container"><canvas id="balanceChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transactions -->
+  <div class="card">
+    <div class="card-header">
+      <div><div class="card-title">Recent Transactions</div><div class="card-subtitle">Latest activity across all accounts</div></div>
+      <span style="font-size:0.75rem;color:var(--text-muted);">Showing 12 of 12</span>
+    </div>
+    <div class="card-body" style="padding:0 1.5rem 1.5rem;">
+      <table class="tx-table">
+        <thead><tr><th>Date</th><th>Description</th><th>Category</th><th>Account</th><th style="text-align:right;">Amount</th></tr></thead>
+        <tbody id="tx-body">
+          <tr><td colspan="5"><div class="skeleton"></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div>
+    <span class="tech-badge">? ASP.NET Core 8</span>
+    <span class="tech-badge">??? Entity Framework Core</span>
+    <span class="tech-badge">?? PostgreSQL</span>
+    <span class="tech-badge">?? Microsoft Azure</span>
+    <span class="tech-badge">?? JWT Authentication</span>
+  </div>
+  <div style="margin-top:0.75rem;">BankFlow — Fintech REST API Demo &copy; 2026 | Built with ASP.NET Core</div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

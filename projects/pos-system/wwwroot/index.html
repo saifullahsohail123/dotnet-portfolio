@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FlowPOS — Inventory & Sales Management System</title>
+  <meta name="description" content="Desktop Point-of-Sale system for inventory and sales management for a plywood business"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<header class="header">
+  <div class="logo"><span class="logo-icon">??</span><div><div class="logo-text">FlowPOS</div><div class="logo-sub">Inventory &amp; Sales Management</div></div></div>
+  <div class="header-center">
+    <div class="stat-pill">Sales Today: <strong id="h-sales">—</strong></div>
+    <div class="stat-pill">Revenue: <strong id="h-rev">—</strong></div>
+    <div class="stat-pill">Items Sold: <strong id="h-items">—</strong></div>
+  </div>
+  <div class="header-right">
+    <div class="time-box" id="pos-time"></div>
+    <div class="cashier-badge">?? Ahmad</div>
+  </div>
+</header>
+
+<main class="pos-layout">
+  <!-- LEFT: Inventory -->
+  <div class="inventory-panel">
+    <div class="inv-header">
+      <div class="inv-title">?? Product Inventory</div>
+      <div class="inv-controls">
+        <input type="text" id="search-prod" class="search-inp" placeholder="Search products..."/>
+        <div class="filter-tabs" id="cat-tabs">
+          <button class="tab-btn active" data-cat="">All</button>
+          <button class="tab-btn" data-cat="Plywood">Plywood</button>
+          <button class="tab-btn" data-cat="MDF">MDF</button>
+          <button class="tab-btn" data-cat="Hardwood">Hardwood</button>
+          <button class="tab-btn" data-cat="Laminate">Laminate</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-grid" id="product-grid"></div>
+  </div>
+
+  <!-- RIGHT: Cart + Report -->
+  <div class="right-panel">
+    <!-- Cart -->
+    <div class="cart-section">
+      <div class="cart-header">?? Current Sale</div>
+      <div class="cart-items" id="cart-items"><div class="cart-empty">No items added. Click a product to add.</div></div>
+      <div class="cart-footer">
+        <div class="cart-row"><span>Subtotal</span><span id="subtotal">PKR 0</span></div>
+        <div class="cart-row"><span>Tax (17% GST)</span><span id="tax-amt">PKR 0</span></div>
+        <div class="cart-row discount-row">
+          <span>Discount</span>
+          <input type="number" id="discount-inp" class="discount-inp" value="0" min="0" max="100" placeholder="0"/>
+          <span>%</span>
+        </div>
+        <div class="cart-row total-row"><span>TOTAL</span><span id="total-amt">PKR 0</span></div>
+        <div class="payment-row">
+          <select id="payment-method" class="payment-sel">
+            <option value="Cash">?? Cash</option>
+            <option value="Card">?? Card</option>
+          </select>
+          <button class="process-btn" id="process-btn">? Process Sale</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Daily Stats -->
+    <div class="report-section">
+      <div class="report-header">?? Daily Sales Report</div>
+      <div class="chart-wrap"><canvas id="hourly-chart"></canvas></div>
+      <div class="report-header" style="margin-top:0.75rem">Recent Transactions</div>
+      <div class="tx-list" id="tx-list"></div>
+    </div>
+  </div>
+</main>
+
+<!-- Sale Success Toast -->
+<div class="toast" id="toast">? Sale Processed Successfully!</div>
+
+<script src="app.js"></script>
+</body>
+</html>

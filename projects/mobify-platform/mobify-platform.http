@@ -1,0 +1,6 @@
+@mobify_platform_HostAddress = http://localhost:5050
+
+GET {{mobify_platform_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

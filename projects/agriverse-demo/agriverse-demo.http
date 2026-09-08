@@ -1,0 +1,6 @@
+@agriverse_demo_HostAddress = http://localhost:5274
+
+GET {{agriverse_demo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

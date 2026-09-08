@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f0f4ff;--bg-card:#ffffff;--bg-header:#0f172a;--accent:#6366f1;--accent2:#0ea5e9;--danger:#ef4444;--warn:#f59e0b;--safe:#10b981;--border:#e2e8f0;--text:#0f172a;--muted:#64748b;--shadow:0 4px 24px rgba(0,0,0,0.08)}
+body{font-family:"Inter",sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.header{background:var(--bg-header);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:64px;position:sticky;top:0;z-index:100}
+.logo{display:flex;align-items:center;gap:0.75rem}
+.logo-icon{font-size:1.5rem}
+.logo-text{font-size:1.4rem;font-weight:800;color:#f8fafc;letter-spacing:-0.5px}
+.logo-sub{font-size:0.6rem;color:#94a3b8;letter-spacing:1px;text-transform:uppercase}
+.hospital-badge{font-size:0.75rem;color:#94a3b8;border:1px solid rgba(255,255,255,0.1);padding:0.3rem 0.85rem;border-radius:20px}
+.acc-badge{font-size:0.8rem;color:#94a3b8}
+.acc-badge strong{color:#10b981}
+.hero{background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 50%,#0f172a 100%);padding:2.5rem 2rem;color:white}
+.hero-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.hero-tag{font-size:0.7rem;color:#818cf8;letter-spacing:2px;text-transform:uppercase;margin-bottom:0.5rem}
+.hero-content h1{font-size:2.4rem;font-weight:800;line-height:1.2;margin-bottom:0.75rem}
+.hero-content h1 span{color:#818cf8}
+.hero-content p{color:#94a3b8;font-size:0.85rem;line-height:1.7;max-width:500px;margin-bottom:1rem}
+.hero-badges{display:flex;flex-wrap:wrap;gap:0.5rem}
+.hb{font-size:0.72rem;background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.3);color:#a5b4fc;padding:0.3rem 0.7rem;border-radius:20px}
+.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;min-width:280px}
+.kpi-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:1.25rem;text-align:center;backdrop-filter:blur(10px)}
+.kpi-card.danger{border-color:rgba(239,68,68,0.3);background:rgba(239,68,68,0.1)}
+.kpi-card.warn{border-color:rgba(245,158,11,0.3);background:rgba(245,158,11,0.1)}
+.kpi-card.safe{border-color:rgba(16,185,129,0.3);background:rgba(16,185,129,0.1)}
+.kpi-val{font-size:2rem;font-weight:800;color:white}
+.kpi-card.danger .kpi-val{color:#fca5a5}
+.kpi-card.warn .kpi-val{color:#fcd34d}
+.kpi-card.safe .kpi-val{color:#6ee7b7}
+.kpi-lbl{font-size:0.65rem;color:rgba(255,255,255,0.5);margin-top:0.2rem;text-transform:uppercase;letter-spacing:1px}
+.main{max-width:1400px;margin:0 auto;padding:2rem}
+.main-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+.wide-card{grid-column:1/-1}
+.card-hdr{padding:1rem 1.5rem;border-bottom:1px solid var(--border);font-size:0.875rem;font-weight:600;color:var(--text)}
+.card-body{padding:1.5rem}
+.table-wrap{overflow-x:auto}
+.chart-wrap{height:220px;position:relative}
+.data-table{width:100%;border-collapse:collapse;font-size:0.78rem;min-width:800px}
+.data-table th{padding:0.75rem 1rem;text-align:left;color:var(--muted);font-size:0.68rem;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid var(--border)}
+.data-table td{padding:0.7rem 1rem;border-bottom:1px solid #f1f5f9;vertical-align:middle}
+.data-table tr:hover td{background:#f8faff}
+.risk-bar{display:flex;align-items:center;gap:0.5rem;font-weight:600}
+.rb-track{flex:1;height:6px;background:#f1f5f9;border-radius:3px;overflow:hidden}
+.rb-fill{height:100%;border-radius:3px}
+.risk-High .rb-fill{background:var(--danger)}
+.risk-Medium .rb-fill{background:var(--warn)}
+.risk-Low .rb-fill{background:var(--safe)}
+.risk-badge{display:inline-block;font-size:0.65rem;font-weight:700;padding:0.2rem 0.55rem;border-radius:4px;text-transform:uppercase;letter-spacing:0.5px}
+.rb-High{background:#fee2e2;color:#dc2626}
+.rb-Medium{background:#fef3c7;color:#d97706}
+.rb-Low{background:#d1fae5;color:#059669}
+/* PREDICTOR */
+.predictor-section{margin-top:1.5rem}
+.predictor-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.pred-header{background:linear-gradient(135deg,#0f172a,#1e1b4b);padding:1.25rem 1.5rem;font-size:1rem;font-weight:700;color:white}
+.pred-body{padding:1.5rem}
+.sliders-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:1.5rem}
+.slider-item label{display:block;font-size:0.78rem;font-weight:600;color:var(--muted);margin-bottom:0.4rem}
+.slider-item label span{color:var(--accent);font-weight:700}
+.slider{width:100%;-webkit-appearance:none;height:6px;background:#e2e8f0;border-radius:3px;outline:none;cursor:pointer}
+.slider::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;background:var(--accent);border-radius:50%;box-shadow:0 2px 8px rgba(99,102,241,0.4);transition:transform 0.2s}
+.slider::-webkit-slider-thumb:hover{transform:scale(1.2)}
+.assess-btn{background:linear-gradient(135deg,var(--accent),#8b5cf6);color:white;border:none;padding:0.85rem 2rem;border-radius:10px;font-family:inherit;font-size:0.9rem;font-weight:700;cursor:pointer;transition:all 0.2s;display:block;margin:0 auto}
+.assess-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(99,102,241,0.4)}
+.result-card{margin-top:1.25rem;border-radius:12px;padding:1.5rem;text-align:center;animation:fadeIn 0.4s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.result-high{background:#fee2e2;border:2px solid #fca5a5}
+.result-medium{background:#fef3c7;border:2px solid #fcd34d}
+.result-low{background:#d1fae5;border:2px solid #6ee7b7}
+.result-score{font-size:3rem;font-weight:900;line-height:1}
+.result-label{font-size:1.2rem;font-weight:700;margin:0.5rem 0}
+.result-advice{font-size:0.82rem;color:var(--muted)}
+.footer{text-align:center;padding:1.25rem;border-top:1px solid var(--border);color:var(--muted);font-size:0.75rem;margin-top:1.5rem}
+.tech-badge{display:inline-flex;gap:0.3rem;background:#f8faff;border:1px solid var(--border);padding:0.25rem 0.6rem;border-radius:4px;font-size:0.65rem;color:var(--muted);margin:0.2rem}

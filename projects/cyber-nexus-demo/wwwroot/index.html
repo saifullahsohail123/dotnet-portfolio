@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cyber Nexus — Threat Intelligence Command Center</title>
+  <meta name="description" content="Enterprise cyber threat intelligence platform — real-time threat monitoring and cybersecurity analytics"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<header class="header">
+  <div class="logo"><span class="logo-icon">?</span><div><div class="logo-text">CYBER NEXUS</div><div class="logo-sub">Threat Intelligence Command Center</div></div></div>
+  <div class="header-center"><div class="pulse-dot"></div><span class="live-text">SYSTEM ACTIVE — MONITORING 847 ENDPOINTS</span></div>
+  <div class="header-right"><div class="clock" id="clock"></div><div class="user-tag">SEC-OPS ?</div></div>
+</header>
+
+<section class="hero">
+  <div class="scanline"></div>
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-label">// ENTERPRISE THREAT INTELLIGENCE</div>
+      <h1>CYBER <span>NEXUS</span></h1>
+      <p>Real-time threat detection, analysis, and mitigation platform. Monitoring global attack vectors across 847 enterprise endpoints with ML-powered anomaly detection.</p>
+    </div>
+    <div class="kpi-row">
+      <div class="kpi-box critical"><div class="kpi-num" id="kpi-active">—</div><div class="kpi-lbl">ACTIVE THREATS</div></div>
+      <div class="kpi-box blocked"><div class="kpi-num" id="kpi-blocked">—</div><div class="kpi-lbl">BLOCKED</div></div>
+      <div class="kpi-box investigating"><div class="kpi-num" id="kpi-invest">—</div><div class="kpi-lbl">INVESTIGATING</div></div>
+      <div class="kpi-box total"><div class="kpi-num" id="kpi-total">—</div><div class="kpi-lbl">DETECTED TODAY</div></div>
+    </div>
+  </div>
+</section>
+
+<main class="main">
+  <div class="grid-layout">
+    <!-- Threat Feed -->
+    <div class="panel wide">
+      <div class="panel-header"><span class="panel-title">? LIVE THREAT FEED</span><span class="blink-dot"></span><span style="color:var(--text-muted);font-size:0.7rem;">AUTO-UPDATING</span></div>
+      <div class="panel-body no-pad">
+        <table class="threat-table">
+          <thead><tr><th>TIME</th><th>SOURCE IP</th><th>ORIGIN</th><th>ATTACK TYPE</th><th>TARGET</th><th>SEVERITY</th><th>STATUS</th></tr></thead>
+          <tbody id="threat-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Charts column -->
+    <div class="charts-col">
+      <div class="panel">
+        <div class="panel-header"><span class="panel-title">THREATS BY TYPE</span></div>
+        <div class="panel-body"><div class="chart-wrap"><canvas id="typeChart"></canvas></div></div>
+      </div>
+      <div class="panel">
+        <div class="panel-header"><span class="panel-title">HOURLY ACTIVITY (24H)</span></div>
+        <div class="panel-body"><div class="chart-wrap"><canvas id="hourlyChart"></canvas></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Alert ticker -->
+  <div class="alert-ticker">
+    <div class="ticker-label">? ALERTS</div>
+    <div class="ticker-track" id="ticker-track">
+      <span>CRITICAL: DDoS spike from 185.234.218.47 — 2.4M pps detected on Auth Gateway &nbsp;|&nbsp; HIGH: Brute-force attack on SSH Login — 3200 attempts/min &nbsp;|&nbsp; CRITICAL: Ransomware C2 beacon from Tehran (37.49.225.106) — Internal network exposure &nbsp;|&nbsp; CRITICAL: Zero-day exploit attempt on API Gateway from Seoul &nbsp;|&nbsp; HIGH: SQL Injection attempt on User Database — query sanitization triggered &nbsp;|&nbsp;</span>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <span class="tech-badge">? ASP.NET Core 8</span>
+  <span class="tech-badge">??? Cybersecurity</span>
+  <span class="tech-badge">?? Real-Time Monitoring</span>
+  <span class="tech-badge">?? OAuth 2.0 / OIDC</span>
+  <span class="tech-badge">?? Docker + Kubernetes</span>
+  <div style="margin-top:0.6rem;color:var(--text-muted);font-size:0.7rem;">CYBER NEXUS — Enterprise Threat Intelligence Platform &copy; 2026</div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agriverse — National Precision Agriculture Platform</title>
+  <meta name="description" content="National-scale precision agriculture platform with satellite imagery, IoT sensors, and AI crop analysis"/>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<header class="header">
+  <div class="logo"><span class="logo-icon">??</span><div><div class="logo-text">AGRIVERSE</div><div class="logo-sub">National Agriculture Intelligence Platform</div></div></div>
+  <nav class="nav"><button class="nav-btn active">Overview</button><button class="nav-btn">Field Analytics</button><button class="nav-btn">Sensor Data</button><button class="nav-btn">AI Insights</button></nav>
+  <div class="header-right"><div class="sat-badge">?? SATELLITE ACTIVE</div></div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-label">// PRECISION AGRICULTURE AI</div>
+      <h1>National <span>Field Intelligence</span><br/>Monitoring System</h1>
+      <p>Satellite imagery inference, IoT sensor networks, and TensorFlow/PyTorch AI models monitoring 7,590 hectares of agricultural land across Pakistan. Over 50TB of agricultural datasets processed.</p>
+    </div>
+    <div class="hero-kpis">
+      <div class="hero-kpi"><div class="hk-val" id="hk-farms">6</div><div class="hk-label">Farm Zones</div></div>
+      <div class="hero-kpi"><div class="hk-val" id="hk-hectares">7,590</div><div class="hk-label">Hectares</div></div>
+      <div class="hero-kpi"><div class="hk-val" id="hk-yield">4.0t</div><div class="hk-label">Avg Yield</div></div>
+      <div class="hero-kpi"><div class="hk-val alert-val" id="hk-alerts">2</div><div class="hk-label">Active Alerts</div></div>
+    </div>
+  </div>
+</section>
+
+<main class="main">
+  <!-- Field Zone Grid -->
+  <div class="section-title">?? Field Zone Status — AI Analysis Results</div>
+  <div class="field-grid" id="field-grid"></div>
+
+  <!-- Charts + Sensors -->
+  <div class="two-col" style="margin-top:1.5rem">
+    <div class="card">
+      <div class="card-hdr">Crop Health Distribution</div>
+      <div class="card-body"><div class="chart-wrap"><canvas id="healthChart"></canvas></div></div>
+    </div>
+    <div class="card">
+      <div class="card-hdr">Yield Forecast by Zone (t/ha)</div>
+      <div class="card-body"><div class="chart-wrap"><canvas id="yieldChart"></canvas></div></div>
+    </div>
+  </div>
+
+  <!-- Sensor Table -->
+  <div class="card" style="margin-top:1.5rem">
+    <div class="card-hdr">?? Live IoT Sensor Readings</div>
+    <div class="card-body no-pad">
+      <table class="data-table">
+        <thead><tr><th>Zone</th><th>Moisture %</th><th>Temp °C</th><th>pH</th><th>Nitrogen ppm</th><th>Humidity %</th><th>Irrigation</th></tr></thead>
+        <tbody id="sensor-body"></tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <span class="tech-badge">? ASP.NET Core</span>
+  <span class="tech-badge">??? Satellite Imagery</span>
+  <span class="tech-badge">?? TensorFlow / PyTorch</span>
+  <span class="tech-badge">?? Docker + Kubernetes</span>
+  <span class="tech-badge">??? MariaDB / MySQL / Oracle</span>
+  <div style="margin-top:0.5rem">Agriverse — National Precision Agriculture Solution &copy; 2026 | PSDP Pakistan</div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
